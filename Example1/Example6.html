@@ -1,0 +1,45 @@
+<!doctype html>
+<!credit https://www.youtube.com/watch?v=2QB1S5y5DIk&list=PLexnxRP3h0cocVm7uspMMdUkLhWoj9x-t&index=6>
+<html ng-app="myModule">
+	<head>
+		<script src="../angular.js"></script>
+		<script src="Example6.js"></script>
+	</head>
+	<body>
+		<div  ng-controller="myController">
+			<!--------------->
+			<!example using ng-repeat>
+			<!--------------->
+			<table>
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Gender</th>
+				</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="employee in employees">
+						<!could use any variable name above, so "employee" could have been called anything, as long as we're consistent with the td entries below>
+						<!the key linkage is with the "employees" portion of the model defined in myController>
+						<td>{{employee.firstName}}</td>
+						<td>{{employee.lastName}}</td>
+						<td>{{employee.gender}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div ng-controller="kerimCtrl">
+			<ul>
+				<li ng-repeat="country in countries">
+					{{country.name}}
+					<ul>
+						<li ng-repeat="city in country.cities">
+							{{city.name}}
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
