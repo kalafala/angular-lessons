@@ -1,5 +1,5 @@
 <!doctype html>
-<!credit https://www.youtube.com/watch?v=2QB1S5y5DIk&list=PLexnxRP3h0cocVm7uspMMdUkLhWoj9x-t&index=6>
+<!credit https://www.youtube.com/watch?v=MzqkIZLkBsU&index=6&list=PL6n9fhu94yhWKHkcL7RJmmXyxkuFB3KSl>
 <html ng-app="myModule">
 	<head>
 		<script src="../angular.js"></script>
@@ -31,11 +31,27 @@
 		</div>
 		<div ng-controller="kerimCtrl">
 			<ul>
+			<!--------------->
+			<!example using nested ng-repeat>
+			<!--------------->
 				<li ng-repeat="country in countries">
-					{{country.name}}
+					{{country.name}} - Index = {{$index}}
 					<ul>
 						<li ng-repeat="city in country.cities">
-							{{city.name}}
+							{{city.name}} - Index = {{$index}} - Parent Index = {{$parent.$index}}
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul>
+			<!--------------->
+			<!another way of getting access to parent index using ng-init>
+			<!--------------->
+				<li ng-repeat="country in countries" ng-init="myVariable=$index">
+					{{country.name}} - Index = {{$index}}
+					<ul>
+						<li ng-repeat="city in country.cities">
+							{{city.name}} - Index = {{$index}} - Parent Index = {{myVariable}}
 						</li>
 					</ul>
 				</li>
