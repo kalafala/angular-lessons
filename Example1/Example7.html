@@ -1,0 +1,37 @@
+<!doctype html>
+<!credit https://www.youtube.com/watch?v=MzqkIZLkBsU&index=6&list=PL6n9fhu94yhWKHkcL7RJmmXyxkuFB3KSl>
+<html ng-app="myModule">
+	<head>
+		<script src="../angular.js"></script>
+		<script src="Example7.js"></script>
+		<link href="Example7.css" rel="stylesheet" />
+	</head>
+	<body>
+		<!------------------------------------------------------->
+		<! Example illustrating how to handle events in AngularJS>
+		<!------------------------------------------------------->
+		<div  ng-controller="myController">
+			<table>
+				<thead>
+					<tr>
+						<th>Language</th>
+						<th>Likes</th>
+						<th>Dislikes</th>
+						<th>Like/Dislike</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="language in languages">
+						<td>{{language.name}}</td>
+						<td>{{language.likes}}</td>
+						<td>{{language.dislikes}}</td>
+						<td>
+								<input type="button" value="Like :)" ng-click="incrementLikes(language)">
+								<input type="button" value="Dislike :(" ng-click="incrementDislikes(language)">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
