@@ -1,0 +1,20 @@
+<!doctype html>
+<!credit https://www.youtube.com/watch?v=mW25S2tiCOM&index=4&list=PLexnxRP3h0cocVm7uspMMdUkLhWoj9x-t>
+<html ng-app="myModule">
+	<head>
+		<script src="../angular.js"></script>
+		<script src="Example4.js"></script>
+	</head>
+	<body ng-controller="myController">
+		<div>
+			Name: {{ employee.firstName + ' ' + employee.lastName}}
+		</div>
+		<div>
+			<!use ng-src instead of src below, to avoid a request to parse img src as DOM is built, before the angular bootstrap process>
+			<!if we had used img src instead, then Developer-Tools, console would show an error>
+			<img ng-src="{{employee.image}}" 
+				 alt="{{employee.name + ' Image'}}"
+				 style="height:100px, width:100px" />
+		</div>
+	</body>
+</html>
