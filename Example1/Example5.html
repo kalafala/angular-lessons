@@ -1,0 +1,60 @@
+<!doctype html>
+<!credit https://www.youtube.com/watch?v=2QB1S5y5DIk&list=PLexnxRP3h0cocVm7uspMMdUkLhWoj9x-t&index=6>
+<html ng-app="myModule">
+	<head>
+		<script src="../angular.js"></script>
+		<script src="Example5.js"></script>
+	</head>
+	<body ng-controller="myController">
+		<div>
+			<!----------->
+			<!Example illustrating 2-way data binding>
+			<!----------->
+			<input type="text" ng-model="message" />
+			<br><br>
+			{{ message }}
+			<br><br>
+			<input type="text" ng-model="greeting" />
+			<br><br>
+			<!----------->
+			<!Example illustrating dynamic update of data model>
+			<!----------->
+			{{ greeting }}
+		</div>
+		
+		<!----------->
+		<!Examples with more complex data type>
+		<!----------->
+		
+		<div>
+			<table>
+				<tr>
+					<td>First Name</td>
+					<td><input type="text" ng-model="employee.firstName"</td>
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td><input type="text" ng-model="employee.lastName"</td>
+				</tr>
+				<tr>
+					<td>Gender</td>
+					<td><input type="text" ng-model="employee.gender"</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>First Name</td>
+					<td> {{employee.firstName}} </td>
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td> {{employee.lastName}} </td>
+				</tr>
+				<tr>
+					<td>Gender</td>
+					<td> {{employee.gender}} </td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
