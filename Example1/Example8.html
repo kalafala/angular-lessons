@@ -1,0 +1,37 @@
+<!doctype html>
+<!credit https://www.youtube.com/watch?v=MzqkIZLkBsU&index=6&list=PL6n9fhu94yhWKHkcL7RJmmXyxkuFB3KSl>
+<html ng-app="myModule">
+	<head>
+		<script src="../angular.js"></script>
+		<script src="Example8.js"></script>
+		<link href="Example8.css" rel="stylesheet" />
+	</head>
+	<body>
+		<!------------------------------------------------------->
+		<! Example illustrating how to handle events in AngularJS>
+		<!------------------------------------------------------->
+		<div  ng-controller="myController">
+			{{message}}
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Date of birth</th>
+						<th>Gender</th>
+						<th>Salary</th>
+						<th>Salary in currency</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="employee in employees">
+						<td>{{employee.name | uppercase}}</td>
+						<td>{{employee.dateOfBirth | date:"dd/MM/yyyy"}}</td>
+						<td>{{employee.gender | lowercase}}</td>
+						<td>{{employee.salary | number:2}}</td>
+						<td>{{employee.salary | currency:"$":0}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
