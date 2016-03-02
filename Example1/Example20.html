@@ -1,0 +1,30 @@
+<!doctype html>
+<!credit https://www.youtube.com/watch?v=rlx1cf7qM0E&index=20&list=PL6n9fhu94yhWKHkcL7RJmmXyxkuFB3KSl>
+<html ng-app="myModule">
+	<head>
+		<script src="angular.js"></script>
+		<script src="Example20.js"></script>
+		<script src="Example20_service.js"></script>
+		<link href="Example8.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div ng-controller="myController">
+			<table>
+				<tr>
+					<td>Your String:</td>
+					<td><input type="text" ng-model="input"/></td>
+				</tr>
+				<tr>
+					<td>Result:</td>
+					<td><input type="text" ng-model="output"/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<input type="button" ng-click="transformString(input)" value="Process String" />
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
