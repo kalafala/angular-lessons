@@ -11,7 +11,13 @@
 			<!------------------------------------------------------->
 			<! Example illustrating ng_include>
 			<!------------------------------------------------------->
-			<div ng-include="'Example16_table.html'"></div>
+			SElect View :
+			<select ng-model="employeeView">
+				<option value="Example16_table.html">Table</option>
+				<option value="Example16_list.html">List</option>
+			</select>
+			<br><br>
+			<div ng-include="employeeView"></div>
 		</div>
 	</body>
 </html>

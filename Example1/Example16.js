@@ -11,6 +11,7 @@ var myApp = angular
 		];
 		
 		$scope.employees = employees;
+		$scope.employeeView = "Example16_table.html"
 	}
 );
 
