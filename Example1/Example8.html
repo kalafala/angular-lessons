@@ -11,7 +11,8 @@
 		<! Example illustrating how to handle events in AngularJS>
 		<!------------------------------------------------------->
 		<div  ng-controller="myController">
-			{{message}}
+			Rows to display: <input type="number" step="1" min="0" max="5" ng-model="rowLimit" />
+			<br> <br>
 			<table>
 				<thead>
 					<tr>
@@ -23,7 +24,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="employee in employees">
+					<tr ng-repeat="employee in employees | limitTo:rowLimit:0">
 						<td>{{employee.name | uppercase}}</td>
 						<td>{{employee.dateOfBirth | date:"dd/MM/yyyy"}}</td>
 						<td>{{employee.gender | lowercase}}</td>

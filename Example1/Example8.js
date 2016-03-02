@@ -12,6 +12,7 @@ var myApp = angular
 		
 		$scope.message = "hello";
 		$scope.employees = employees;
+		$scope.rowLimit = 3;
 	}
 );
 
