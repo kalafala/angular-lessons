@@ -1,0 +1,22 @@
+
+<!credit https://www.youtube.com/watch?v=MzqkIZLkBsU&index=16&list=PL6n9fhu94yhWKHkcL7RJmmXyxkuFB3KSl>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Gender</th>
+						<th>Salary</th>
+						<th>Salary in currency</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="employee in employees">
+						<td>{{employee.name | uppercase}}</td>
+						<td>{{employee.gender | lowercase}}</td>
+						<td>{{employee.salary | number:2}}</td>
+						<td>{{employee.salary | currency:"$":0}}</td>
+					</tr>
+				</tbody>
+			</table>
+		
