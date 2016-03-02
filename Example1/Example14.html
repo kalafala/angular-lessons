@@ -1,0 +1,81 @@
+<!doctype html>
+<!credit https://www.youtube.com/watch?v=MzqkIZLkBsU&index=14&list=PL6n9fhu94yhWKHkcL7RJmmXyxkuFB3KSl>
+<html ng-app="myModule">
+	<head>
+		<script src="../angular.js"></script>
+		<script src="Example14.js"></script>
+		<link href="Example8.css" rel="stylesheet" />
+	</head>
+	<body>
+		<!------------------------------------------------------->
+		<! Example illustrating ng-hide and ng-show in AngularJS>
+		<!------------------------------------------------------->
+		<div  ng-controller="myController">
+			<input type="checkbox" ng-model="hideSalary"/>Hide Salary
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Date of birth</th>
+						<th>Gender</th>
+						<th ng-hide="hideSalary">Salary</th>
+						<th ng-hide="hideSalary">Salary in currency</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="employee in employees">
+						<td>{{employee.name | uppercase}}</td>
+						<td>{{employee.dateOfBirth | date:"dd/MM/yyyy"}}</td>
+						<td>{{employee.gender | lowercase}}</td>
+						<td ng-hide="hideSalary">{{employee.salary | number:2}}</td>
+						<td ng-hide="hideSalary">{{employee.salary | currency:"$":0}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<br><br>
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Date of birth</th>
+						<th>Gender</th>
+						<th ng-show="!hideSalary">Salary</th>
+						<th ng-show="!hideSalary">Salary in currency</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="employee in employees">
+						<td>{{employee.name | uppercase}}</td>
+						<td>{{employee.dateOfBirth | date:"dd/MM/yyyy"}}</td>
+						<td>{{employee.gender | lowercase}}</td>
+						<td ng-show="!hideSalary">{{employee.salary | number:2}}</td>
+						<td ng-show="!hideSalary">{{employee.salary | currency:"$":0}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<br><br>
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Date of birth</th>
+						<th>Gender</th>
+						<th>Salary</th>
+						<th>Salary in currency</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="employee in employees">
+						<td>{{employee.name | uppercase}}</td>
+						<td>{{employee.dateOfBirth | date:"dd/MM/yyyy"}}</td>
+						<td>{{employee.gender | lowercase}}</td>
+						<td ng-hide="hideSalary">{{employee.salary | number:2}}</td>
+						<td ng-show="hideSalary"> ##### </td>
+						<td ng-hide="hideSalary">{{employee.salary | currency:"$":0}}</td>
+						<td ng-show="hideSalary"> ##### </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
