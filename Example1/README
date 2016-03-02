@@ -3,3 +3,8 @@ node node_file_server.js
 In browswer window navigate to:  localhost:3000/Example16.html
 
 Note that angular.js has been moved to the Example1 directory 
+
+Also, I created a mock DB server
+node node_mock_db_server.js
+URL request: get localhost:3001/getRecords
+
