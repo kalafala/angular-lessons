@@ -9,6 +9,9 @@ var myApp = angular
 		.then(function (response) {
 				$scope.employees=response.data;
 				$log.info(response);
+		}, function(reason) {
+			$scope.error = reason.data;
+			$log.info(reason);
 		}
 		);
 	}
